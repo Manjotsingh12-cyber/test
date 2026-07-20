@@ -1,7 +1,7 @@
 name: my 2nd workflow
 on: push
-  jobs:
-    job2:
+jobs:
+  job2:
     runs-on: ubuntu-latest
     steps:
       - name: hello
