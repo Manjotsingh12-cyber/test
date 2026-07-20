@@ -1,9 +1,13 @@
-name: my first workflow
+name: my 2nd workflow
 on: push
-jobs: 
-  job1:
-    runs-on: ubuntu-22.04
+  jobs:
+    job2:
+    runs-on: ubuntu-latest
     steps:
-      - name: say hello
+      - name: hello
         run: echo "hello"
+      - name: command
+        run: date
+      - name: list
+        run: ls -la 
       
