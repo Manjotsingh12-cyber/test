@@ -2,14 +2,14 @@ name: two jobs
 on: push
 jobs:
   job1:
-  runs-on: ubuntu-latest
-  steps:
-    - name: job1
-      run: echo "job 1 completed"
+    runs-on: ubuntu-latest
+    steps:
+      - name: job1
+        run: echo "job 1 completed"
   job2:
-  runs-on: ubuntu-latest
-  steps:
-    - name: job2
-      run: echo "job 2 completed"
-    - name: command
-      run: date
+    runs-on: ubuntu-latest
+    steps:
+      - name: job2
+        run: echo "job 2 completed"
+      - name: command
+        run: date
