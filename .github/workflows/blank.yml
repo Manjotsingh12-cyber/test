@@ -1,13 +1,15 @@
-name: my 2nd workflow
+name: two jobs
 on: push
 jobs:
+  job1:
+  runs-on: ubuntu-latest
+  steps:
+    - name: job1
+      run: echo "job 1 completed"
   job2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: hello
-        run: echo "hello"
-      - name: command
-        run: date
-      - name: list
-        run: ls -la 
-      
+  runs-on: ubuntu-latest
+  steps:
+    - name: job2
+      run: echo "job 2 completed"
+    - name: command
+      run: date
