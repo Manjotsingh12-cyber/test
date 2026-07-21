@@ -9,7 +9,7 @@ jobs:
       - name: list repo content
         run: ls -la >> listing.txt
       - name: command
-        run: echo "hostname" hostname.txt
+        run: echo "hostname" >> hostname.txt
       - name: upload arctifacts
         uses: actions/upload-artifact@v4
         with:
