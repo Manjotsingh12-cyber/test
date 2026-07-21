@@ -18,5 +18,5 @@ jobs:
       - name: upload 
         uses: actions/upload-artifact@v4
         with:
-          name: repo
+          name: repostry
           path: hostname.txt
