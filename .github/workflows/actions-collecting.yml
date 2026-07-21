@@ -1,0 +1,15 @@
+name: checkout and archieve
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: list repo content
+        run: ls -la >> listing.txt
+      - name: upload arctifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: repo
+          path: listing.txt
