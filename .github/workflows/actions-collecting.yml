@@ -1,22 +1,25 @@
-name: checkout and archieve
+name: pass the arctifacts between 
 on: push
 jobs:
   job1:
     runs-on: ubuntu-22.04
     steps:
       - name: checkout
-        uses: actions/checkout@v4
-      - name: list repo content
-        run: ls -la >> listing.txt
+        uses: actions/checkout@v4.4.0
       - name: command
+        run: ls -ls 
+      - name: create file
         run: hostname >> hostname.txt
-      - name: upload arctifacts
+      - name: upload artivasts
         uses: actions/upload-artifact@v4
         with:
-          name: repo
-          path: listing.txt
-      - name: upload 
-        uses: actions/upload-artifact@v4
-        with:
-          name: repostry
+          name: hostname-artifact
           path: hostname.txt
+  job2:
+    runs-on: ubuntu-22.04
+    needs: job1
+    steps:
+      - name: checkout download
+        uses: actions/download-artifact@v4
+        with:
+          name: hostname-artifact
